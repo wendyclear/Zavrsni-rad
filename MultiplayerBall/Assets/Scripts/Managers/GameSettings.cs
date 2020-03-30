@@ -12,14 +12,25 @@ public class GameSettings : ScriptableObject
     public string GameVersion { get { return _gameVersion;}}
 
     [SerializeField]
-    public string _nickname = "Punfish";
+    public string _nickname;
+
+    public void Awake()
+    {
+        if (!string.IsNullOrEmpty(UserManager.UM.GetUsername()))
+        {
+            _nickname = UserManager.UM.GetUsername();
+        }
+        else
+        {
+            _nickname = "Sara";
+        }
+    }
 
     public string Nickname
     {
         get
         {
-            int val = Random.Range(0, 9999);
-            return _nickname + val.ToString();
+            return _nickname;
         }
     }
 }
