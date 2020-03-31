@@ -16,7 +16,7 @@ public class TestConnect : MonoBehaviourPunCallbacks
         //PhotonNetwork.SerializationRate = 5; // 10 on default per second (the bigger the value , the bigger lag) 
         //AuthenticationValues authValues = new AuthenticationValues("0"); -> treba biti unique
         //PhotonNetwork.AuthValues = authValues;
-        //PhotonNetwork.GameVersion = "0.0.1"; // da se igra ne brejka ako se razlicite verzije spajaju, tu nece bit toga
+        PhotonNetwork.GameVersion = "0.0.1"; // da se igra ne brejka ako se razlicite verzije spajaju, tu nece bit toga
         PhotonNetwork.NickName = MasterManager.GameSettings.Nickname;
         PhotonNetwork.GameVersion = MasterManager.GameSettings.GameVersion;
         PhotonNetwork.ConnectUsingSettings();
@@ -35,6 +35,7 @@ public class TestConnect : MonoBehaviourPunCallbacks
         print(PhotonNetwork.LocalPlayer.NickName);
         if (!PhotonNetwork.InLobby)
         {
+            print("Connected to lobby.");
             PhotonNetwork.JoinLobby(); // lobby type = default
         }
     }
