@@ -41,6 +41,7 @@ public class PlayerListing : MonoBehaviourPunCallbacks
         {
             result = -1;
         }
-        _text.text = result.ToString() + ", " + player.NickName;
+        //_text.text = result.ToString() + ", " + player.NickName;
+        _text.text = PhotonNetwork.PhotonServerSettings.AppSettings.Server.ToString() + ", " + player.NickName;
     }
 }
