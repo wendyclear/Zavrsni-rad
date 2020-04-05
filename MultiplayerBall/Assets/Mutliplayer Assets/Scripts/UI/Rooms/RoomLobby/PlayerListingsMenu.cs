@@ -14,11 +14,18 @@ public class PlayerListingsMenu : MonoBehaviourPunCallbacks
     private PlayerListing _playerListing;
     [SerializeField]
     private Text _readyUpText;
+    [SerializeField]
+    private Text _playersCountText;
 
     private List<PlayerListing> _listings = new List<PlayerListing>();
     private RoomsCanvases _roomsCanvases;
     private bool _ready = false;
 
+
+    public void Update()
+    {
+        _playersCountText.text = "Players in room : " + PhotonNetwork.CurrentRoom.PlayerCount;
+    }
     public override void OnEnable()
     {
         base.OnEnable();

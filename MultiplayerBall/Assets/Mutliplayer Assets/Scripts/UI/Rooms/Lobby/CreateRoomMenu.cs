@@ -18,6 +18,7 @@ public class CreateRoomMenu : MonoBehaviourPunCallbacks
 
     public void OnClick_CreateRoom()
     {
+        
         if (!PhotonNetwork.IsConnected)
         {
             return;
@@ -30,6 +31,8 @@ public class CreateRoomMenu : MonoBehaviourPunCallbacks
         options.PlayerTtl = 1;
         options.EmptyRoomTtl = 1; 
         PhotonNetwork.JoinOrCreateRoom(_roomName.text, options, TypedLobby.Default);
+
+
     }
 
     public override void OnCreatedRoom()
