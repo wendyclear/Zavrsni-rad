@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 140783747933322934}
   - component: {fileID: 9078355771171223533}
   - component: {fileID: 1555121836359423947}
+  - component: {fileID: 3520499179283062938}
   m_Layer: 0
   m_Name: Traka
   m_TagString: Untagged
@@ -135,3 +136,16 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
+--- !u!65 &3520499179283062938
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307846509112112619}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.999961, y: 1.0000118, z: 7.9999948}
+  m_Center: {x: 0.0000011920929, y: -0.50000554, z: 0}
