@@ -20,8 +20,8 @@ ScriptsOnlyBuild:
     - ShowButton
     - SimpleObjectMover
     - SingletonReferences
-    - StopCamera
     - TestConnect
+    - UnityStandardAssets.Utility.SmoothFollow
     - UnityStandardAssets.Vehicles.Ball.Ball
     - UnityStandardAssets.Vehicles.Ball.BallUserControlPhoton
     - UserManager
@@ -35,8 +35,6 @@ ScriptsOnlyBuild:
     - Photon.Pun.Demo.PunBasics.PlayerUI
     - Photon.Pun.Demo.SlotRacer.PlayerControl
     - Photon.Pun.Demo.SlotRacer.Utils.SplineWalker
-    PhotonUnityNetworking.Editor.dll:
-    - ServerSettingsInspector
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonAnimatorView
     - Photon.Pun.PhotonRigidbodyView
@@ -124,8 +122,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 10476}
     - Class: 114
-      Script: {instanceID: 10646}
-    - Class: 114
       Script: {instanceID: 10770}
     - Class: 114
       Script: {instanceID: 10844}
@@ -139,6 +135,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11236}
     - Class: 114
       Script: {instanceID: 11320}
+    - Class: 114
+      Script: {instanceID: 11362}
     - Class: 114
       Script: {instanceID: 11588}
     - Class: 114
@@ -303,7 +301,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12082}
     - Class: 114
-      Script: {instanceID: 17984}
+      Script: {instanceID: 18788}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -414,6 +412,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11320}
     - Class: 114
+      Script: {instanceID: 11362}
+    - Class: 114
       Script: {instanceID: 11438}
     - Class: 114
       Script: {instanceID: 11452}
@@ -432,7 +432,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12082}
     - Class: 114
-      Script: {instanceID: 17984}
+      Script: {instanceID: 18788}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1772,7 +1772,7 @@ ScriptsOnlyBuild:
     className: AeroplanePropellerAnimator
   - hash:
       serializedVersion: 2
-      Hash: db5c2f96bdd53a18b5dddb89b1c2db2e
+      Hash: 94a4b431b4cae5f359cd0f9113346dd5
     assemblyName: Assembly-CSharp.dll
     namespaceName: UnityStandardAssets.Vehicles.Ball
     className: BallUserControlPhoton
@@ -2393,5 +2393,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/NameScene.unity
   - Assets/Scenes/Lobby.unity
   - Assets/Scenes/Game.unity
-  playerPath: C:/Users/sara/Desktop/sara/Zavrsni-rad/MultiplayerBall/Builds/Build
-    without server/MultiplayerBall.exe
+  playerPath: C:/Users/sara/Desktop/Zavrsni-rad/MultiplayerBall/Builds/Latest build/MultiplayerBall.exe
