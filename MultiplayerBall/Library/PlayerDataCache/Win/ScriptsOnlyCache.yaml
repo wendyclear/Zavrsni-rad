@@ -36,7 +36,7 @@ ScriptsOnlyBuild:
     - Photon.Pun.Demo.SlotRacer.PlayerControl
     - Photon.Pun.Demo.SlotRacer.Utils.SplineWalker
     PhotonUnityNetworking.Editor.dll:
-    - Photon.Pun.PhotonViewInspector
+    - ServerSettingsInspector
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonAnimatorView
     - Photon.Pun.PhotonRigidbodyView
@@ -303,7 +303,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12082}
     - Class: 114
-      Script: {instanceID: 18540}
+      Script: {instanceID: 17984}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -432,7 +432,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12082}
     - Class: 114
-      Script: {instanceID: 18540}
+      Script: {instanceID: 17984}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -2393,4 +2393,5 @@ ScriptsOnlyBuild:
   - Assets/Scenes/NameScene.unity
   - Assets/Scenes/Lobby.unity
   - Assets/Scenes/Game.unity
-  playerPath: C:/Users/sara/Desktop/Zavrsni-rad/MultiplayerBall/Builds/Latest build/MultiplayerBall.exe
+  playerPath: C:/Users/sara/Desktop/sara/Zavrsni-rad/MultiplayerBall/Builds/Build
+    without server/MultiplayerBall.exe
