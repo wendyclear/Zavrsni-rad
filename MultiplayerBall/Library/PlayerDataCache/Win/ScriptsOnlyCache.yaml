@@ -20,7 +20,9 @@ ScriptsOnlyBuild:
     - ShowButton
     - SimpleObjectMover
     - SingletonReferences
+    - TargetMover
     - TestConnect
+    - TimedStateTransition
     - UnityStandardAssets.Utility.SmoothFollow
     - UnityStandardAssets.Vehicles.Ball.Ball
     - UnityStandardAssets.Vehicles.Ball.BallUserControlPhoton
@@ -42,12 +44,6 @@ ScriptsOnlyBuild:
     - Photon.Pun.PhotonTransformViewClassic
     - Photon.Pun.PhotonView
     - Photon.Pun.ServerSettings
-    UnityEditor.Graphs.dll:
-    - UnityEditor.Graphs.AnimationBlendTree.Graph
-    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.Graph
-    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -132,22 +128,28 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11092}
     - Class: 114
-      Script: {instanceID: 11236}
+      Script: {instanceID: 11232}
     - Class: 114
-      Script: {instanceID: 11320}
+      Script: {instanceID: 11238}
     - Class: 114
-      Script: {instanceID: 11362}
+      Script: {instanceID: 11298}
     - Class: 114
-      Script: {instanceID: 11588}
+      Script: {instanceID: 11324}
     - Class: 114
-      Script: {instanceID: 11696}
+      Script: {instanceID: 11366}
     - Class: 114
-      Script: {instanceID: 11956}
+      Script: {instanceID: 11592}
     - Class: 114
-      Script: {instanceID: 12036}
+      Script: {instanceID: 11700}
+    - Class: 114
+      Script: {instanceID: 11960}
+    - Class: 114
+      Script: {instanceID: 12040}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
+      Script: {instanceID: 0}
+    - Class: 134
       Script: {instanceID: 0}
     - Class: 135
       Script: {instanceID: 0}
@@ -267,41 +269,41 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11222}
     - Class: 114
-      Script: {instanceID: 11232}
+      Script: {instanceID: 11234}
     - Class: 114
-      Script: {instanceID: 11236}
+      Script: {instanceID: 11238}
     - Class: 114
-      Script: {instanceID: 11252}
+      Script: {instanceID: 11254}
     - Class: 114
-      Script: {instanceID: 11320}
+      Script: {instanceID: 11324}
     - Class: 114
-      Script: {instanceID: 11438}
+      Script: {instanceID: 11442}
     - Class: 114
-      Script: {instanceID: 11440}
+      Script: {instanceID: 11444}
     - Class: 114
-      Script: {instanceID: 11452}
+      Script: {instanceID: 11456}
     - Class: 114
-      Script: {instanceID: 11458}
+      Script: {instanceID: 11462}
     - Class: 114
-      Script: {instanceID: 11588}
+      Script: {instanceID: 11592}
     - Class: 114
-      Script: {instanceID: 11696}
+      Script: {instanceID: 11700}
     - Class: 114
-      Script: {instanceID: 11740}
+      Script: {instanceID: 11744}
     - Class: 114
-      Script: {instanceID: 11956}
+      Script: {instanceID: 11960}
     - Class: 114
-      Script: {instanceID: 11996}
+      Script: {instanceID: 12000}
     - Class: 114
-      Script: {instanceID: 12036}
+      Script: {instanceID: 12040}
     - Class: 114
-      Script: {instanceID: 12062}
+      Script: {instanceID: 12066}
     - Class: 114
-      Script: {instanceID: 12074}
+      Script: {instanceID: 12078}
     - Class: 114
-      Script: {instanceID: 12082}
+      Script: {instanceID: 12086}
     - Class: 114
-      Script: {instanceID: 18386}
+      Script: {instanceID: 20036}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -408,31 +410,31 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11224}
     - Class: 114
-      Script: {instanceID: 11236}
+      Script: {instanceID: 11238}
     - Class: 114
-      Script: {instanceID: 11320}
+      Script: {instanceID: 11324}
     - Class: 114
-      Script: {instanceID: 11362}
+      Script: {instanceID: 11366}
     - Class: 114
-      Script: {instanceID: 11438}
+      Script: {instanceID: 11442}
     - Class: 114
-      Script: {instanceID: 11452}
+      Script: {instanceID: 11456}
     - Class: 114
-      Script: {instanceID: 11458}
+      Script: {instanceID: 11462}
     - Class: 114
-      Script: {instanceID: 11588}
+      Script: {instanceID: 11592}
     - Class: 114
-      Script: {instanceID: 11696}
+      Script: {instanceID: 11700}
     - Class: 114
-      Script: {instanceID: 11956}
+      Script: {instanceID: 11960}
     - Class: 114
-      Script: {instanceID: 12036}
+      Script: {instanceID: 12040}
     - Class: 114
-      Script: {instanceID: 12074}
+      Script: {instanceID: 12078}
     - Class: 114
-      Script: {instanceID: 12082}
+      Script: {instanceID: 12086}
     - Class: 114
-      Script: {instanceID: 18386}
+      Script: {instanceID: 20036}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1682,6 +1684,12 @@ ScriptsOnlyBuild:
     className: SignalReceiver
   - hash:
       serializedVersion: 2
+      Hash: 6c55af785640d6e5e29b0774b37e0ac3
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TargetMover
+  - hash:
+      serializedVersion: 2
       Hash: 9546359939f2befdb9198e5496b854d2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -1764,6 +1772,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: UnityStandardAssets.Cameras
     className: HandHeldCam
+  - hash:
+      serializedVersion: 2
+      Hash: 6bf8f99bfd71c7f5633583694cd78f8f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: TimedStateTransition
   - hash:
       serializedVersion: 2
       Hash: b294ba655397a2a6c58cddd17cea876c

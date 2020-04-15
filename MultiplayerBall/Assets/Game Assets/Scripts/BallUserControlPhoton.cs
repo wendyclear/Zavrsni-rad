@@ -46,24 +46,6 @@ namespace UnityStandardAssets.Vehicles.Ball
                 }
         }
 
-       /* private void Start()
-        {
-            if (base.photonView.IsMine)
-            {
-                // cam = PhotonNetwork.Instantiate("Camera", new Vector3(0f,0f,0f), Quaternion.identity, 0);
-                //Vector3 _camPos = new Vector3(transform.position.x, transform.position.y + 10, transform.position.z - 70);
-
-                //instantiating camera - then for each player theres one camera in the game
-                // _cam = PhotonNetwork.Instantiate("Camera", _camPos, Quaternion.identity, 0);
-                //cam = _cam.GetComponent<Transform>();
-                // cam.GetComponent<Camera>().enabled = true;
-                
-                cam = GameObject.Find("MainCamera").GetComponent<Transform>();
-                Debug.Log("Camera found " + cam);
-                //_mainCamera.GetComponent<Camera>().enabled = false;
-
-            }
-        }*/
         private void Update()
         {
             // Get the axis and jump input.

@@ -20,6 +20,15 @@ namespace UnityStandardAssets.Vehicles.Ball
             GetComponent<Rigidbody>().maxAngularVelocity = m_MaxAngularVelocity;
         }
 
+        private void OnCollisionEnter(Collision collision)
+        {
+            if (collision.gameObject.tag == "instadeath")
+            {
+                Destroy(gameObject);
+                GameObject.Find("Canvases").GetComponent<GameCanvasManager>().GameOver();
+            }
+        }
+
         public void Move(Vector3 moveDirection, bool jump)
         {
             // If using torque to rotate the ball...
