@@ -23,4 +23,9 @@ public class NetworkedPrefab
         if (startIndex == -1) return string.Empty;
         return path.Substring(startIndex + additionalLength, path.Length - (additionalLength + startIndex + extentionLength));
     }
+
+    public string GetPrefabName()
+    {
+        return Prefab.name;
+    }
 }

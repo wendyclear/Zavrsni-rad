@@ -10,7 +10,7 @@ public class TestConnect : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Start()
     {
-        print("Connecting to server...");
+        //print("Connecting to server...");
         PhotonNetwork.AutomaticallySyncScene = true;
         //PhotonNetwork.SendRate = 20; // 20 on default per second
         //PhotonNetwork.SerializationRate = 5; // 10 on default per second (the bigger the value , the bigger lag) 
@@ -31,17 +31,17 @@ public class TestConnect : MonoBehaviourPunCallbacks
     }
     public override void OnConnectedToMaster()
     {
-        print("Connected to server.");
-        print(PhotonNetwork.LocalPlayer.NickName);
+        //print("Connected to server.");
+       // print(PhotonNetwork.LocalPlayer.NickName);
         if (!PhotonNetwork.InLobby)
         {
-            print("Connected to lobby.");
+            //print("Connected to lobby.");
             PhotonNetwork.JoinLobby(); // lobby type = default
         }
     }
     public override void OnDisconnected(DisconnectCause cause)
     {
         //base.OnDisconnected(cause);
-        print("Disconnected from server because :"+cause.ToString());
+        //print("Disconnected from server because :"+cause.ToString());
     }
 }

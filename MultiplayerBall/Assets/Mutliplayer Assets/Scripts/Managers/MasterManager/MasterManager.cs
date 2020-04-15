@@ -14,6 +14,9 @@ public class MasterManager : SingletonScriptableObject<MasterManager>
     private GameSettings _gameSettings;
     public static  GameSettings GameSettings { get{  return Instance._gameSettings;}}
 
+    private static int[] _playersPositions = new int[] { 0, 20, 40 };
+    private static int _playerCount = 0;
+
     [SerializeField]
     private List<NetworkedPrefab> _networkedPrefabs = new List<NetworkedPrefab>();
 
@@ -25,10 +28,22 @@ public class MasterManager : SingletonScriptableObject<MasterManager>
             //check if object matches with prefab NetwrokedPrefab and then place it and return
             if (networkedPrefab.Prefab == obj)
             {
-                if (networkedPrefab.Path != string.Empty)
+               if (networkedPrefab.Path != string.Empty)
                 {
-                    GameObject result = PhotonNetwork.Instantiate(networkedPrefab.Path, position, rotation);
-                    return result;
+                    /* GameObject result = PhotonNetwork.Instantiate(networkedPrefab.Path, position, rotation);
+                     return result;*/
+                        GameObject result = new GameObject();
+                        if (networkedPrefab.GetPrefabName() == "PlayerBall")
+                        {
+                            Vector3 _position = new Vector3(position.x + _playersPositions[_playerCount], position.y, position.z);
+                            _playerCount += 1;
+                            result = PhotonNetwork.Instantiate(networkedPrefab.Path, _position, rotation);
+                        }
+                        else
+                        {
+                            result = PhotonNetwork.Instantiate(networkedPrefab.Path, position, rotation);
+                        }
+                        return result;
                 }
                 else
                 {
@@ -62,3 +77,5 @@ public class MasterManager : SingletonScriptableObject<MasterManager>
     }
 
 }
+
+
