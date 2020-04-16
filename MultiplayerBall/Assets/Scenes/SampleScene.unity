@@ -324,6 +324,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TextConnect
       objectReference: {fileID: 0}
+    - target: {fileID: 9102361869370297598, guid: c84e4887e270a9046ae6a2e393eeba00,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7104152117045025837, guid: c84e4887e270a9046ae6a2e393eeba00,
         type: 3}
       propertyPath: m_LocalPosition.x

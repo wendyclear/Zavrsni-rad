@@ -20,6 +20,7 @@ public class TestConnect : MonoBehaviourPunCallbacks
         PhotonNetwork.NickName = MasterManager.GameSettings.Nickname;
         PhotonNetwork.GameVersion = MasterManager.GameSettings.GameVersion;
         PhotonNetwork.ConnectUsingSettings();
+        PhotonNetwork.ConnectToRegion("0");
 
 
     }

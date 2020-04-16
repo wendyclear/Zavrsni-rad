@@ -1,13 +1,18 @@
-﻿using System;
+﻿using Photon.Pun;
+using System;
 using UnityEngine;
 namespace UnityStandardAssets.Vehicles.Ball
 {
-    public class Ball : MonoBehaviour
+    public class Ball : MonoBehaviourPun
+   // public class Ball : MonoBehaviour
     {
         [SerializeField] private float m_MovePower = 5; // The force added to the ball to move it.
         [SerializeField] private bool m_UseTorque = true; // Whether or not to use torque to move the ball.
         [SerializeField] private float m_MaxAngularVelocity = 25; // The maximum velocity the ball can rotate at.
         [SerializeField] private float m_JumpPower = 2; // The force added to the ball when it jumps.
+        [SerializeField] private float _x;
+        [SerializeField] private float _y;
+        [SerializeField] private float _z;
 
         private const float k_GroundRayLength = 1f; // The length of the ray to check if the ball is grounded.
         private Rigidbody m_Rigidbody;
@@ -18,14 +23,32 @@ namespace UnityStandardAssets.Vehicles.Ball
             m_Rigidbody = GetComponent<Rigidbody>();
             // Set the maximum angular velocity.
             GetComponent<Rigidbody>().maxAngularVelocity = m_MaxAngularVelocity;
+            if (base.photonView.IsMine)
+            {
+                Debug.Log("aaa");
+               // _x = transform.position.x;
+               // _x = transform.position.y;
+               // _x = transform.position.z;
+            }
+        }
+
+        private void Awake()
+        {
+            Debug.Log("bbb");
+            //transform.position = new Vector3(_x, _y, _z);
         }
 
         private void OnCollisionEnter(Collision collision)
         {
             if (collision.gameObject.tag == "instadeath")
             {
+               // m_Rigidbody.transform.position = new Vector3(0, 0, 0);
                 Destroy(gameObject);
-                GameObject.Find("Canvases").GetComponent<GameCanvasManager>().GameOver();
+                if (base.photonView.IsMine)
+                {
+                    GameObject.Find("Canvases").GetComponent<GameCanvasManager>().GameOver();
+                }
+                //GameObject.Find("Canvases").GetComponent<GameCanvasManager>().GameOver();
             }
         }
 
