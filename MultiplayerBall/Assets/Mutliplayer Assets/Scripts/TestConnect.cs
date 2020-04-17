@@ -11,16 +11,19 @@ public class TestConnect : MonoBehaviourPunCallbacks
     void Start()
     {
         //print("Connecting to server...");
-        PhotonNetwork.AutomaticallySyncScene = true;
-        //PhotonNetwork.SendRate = 20; // 20 on default per second
-        //PhotonNetwork.SerializationRate = 5; // 10 on default per second (the bigger the value , the bigger lag) 
-        //AuthenticationValues authValues = new AuthenticationValues("0"); -> treba biti unique
-        //PhotonNetwork.AuthValues = authValues;
-        PhotonNetwork.GameVersion = "0.0.1"; // da se igra ne brejka ako se razlicite verzije spajaju, tu nece bit toga
-        PhotonNetwork.NickName = MasterManager.GameSettings.Nickname;
-        PhotonNetwork.GameVersion = MasterManager.GameSettings.GameVersion;
-        PhotonNetwork.ConnectUsingSettings();
-        PhotonNetwork.ConnectToRegion("0");
+        if (!PhotonNetwork.IsConnected)
+        {
+            PhotonNetwork.AutomaticallySyncScene = true;
+            //PhotonNetwork.SendRate = 20; // 20 on default per second
+            //PhotonNetwork.SerializationRate = 5; // 10 on default per second (the bigger the value , the bigger lag) 
+            //AuthenticationValues authValues = new AuthenticationValues("0"); -> treba biti unique
+            //PhotonNetwork.AuthValues = authValues;
+            PhotonNetwork.GameVersion = "0.0.1"; // da se igra ne brejka ako se razlicite verzije spajaju, tu nece bit toga
+            PhotonNetwork.NickName = MasterManager.GameSettings.Nickname;
+            PhotonNetwork.GameVersion = MasterManager.GameSettings.GameVersion;
+            PhotonNetwork.ConnectUsingSettings();
+            PhotonNetwork.ConnectToRegion("0");
+        }
 
 
     }

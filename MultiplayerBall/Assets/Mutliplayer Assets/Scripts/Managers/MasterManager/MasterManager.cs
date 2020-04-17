@@ -30,9 +30,9 @@ public class MasterManager : SingletonScriptableObject<MasterManager>
             {
                if (networkedPrefab.Path != string.Empty)
                 {
-                    // GameObject result = PhotonNetwork.Instantiate(networkedPrefab.Path, position, rotation);
-                    // return result;
-                        GameObject result = new GameObject();
+                     GameObject result = PhotonNetwork.Instantiate(networkedPrefab.Path, position, rotation);
+                     return result;
+                       /* GameObject result = new GameObject();
                         if (networkedPrefab.GetPrefabName() == "PlayerBall")
                         {
                             Vector3 _position = new Vector3(position.x + _playersPositions[_playerCount], position.y, position.z);
@@ -44,7 +44,7 @@ public class MasterManager : SingletonScriptableObject<MasterManager>
                         {
                             result = PhotonNetwork.Instantiate(networkedPrefab.Path, position, rotation);
                         }
-                        return result;
+                        return result;*/
                 }
                 else
                 {

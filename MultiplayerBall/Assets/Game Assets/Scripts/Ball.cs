@@ -25,10 +25,11 @@ namespace UnityStandardAssets.Vehicles.Ball
             GetComponent<Rigidbody>().maxAngularVelocity = m_MaxAngularVelocity;
             if (base.photonView.IsMine)
             {
-                Debug.Log("aaa");
-               // _x = transform.position.x;
-               // _x = transform.position.y;
-               // _x = transform.position.z;
+                //Debug.Log("aaa");
+                //DontDestroyOnLoad(this.gameObject);
+                // _x = transform.position.x;
+                // _x = transform.position.y;
+                // _x = transform.position.z;
             }
         }
 
@@ -43,7 +44,7 @@ namespace UnityStandardAssets.Vehicles.Ball
             if (collision.gameObject.tag == "instadeath")
             {
                // m_Rigidbody.transform.position = new Vector3(0, 0, 0);
-                Destroy(gameObject);
+                //Destroy(gameObject);
                 if (base.photonView.IsMine)
                 {
                     GameObject.Find("Canvases").GetComponent<GameCanvasManager>().GameOver();
