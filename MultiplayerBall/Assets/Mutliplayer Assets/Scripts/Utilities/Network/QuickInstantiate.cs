@@ -9,7 +9,7 @@ public class QuickInstantiate : MonoBehaviour
 
     private void Awake()
     {
-        Vector2 offset = Random.insideUnitCircle * 3f;
+        Vector2 offset = Random.insideUnitCircle * 4f;
         Vector3 position = new Vector3(transform.position.x + offset.x, transform.position.y, transform.position.z);
         //Vector2 offset = Random.insideUnitCircle * 3f;
        //Vector3 position = new Vector3(transform.position.x + offset.x, transform.position.y + offset.y, transform.position.z);

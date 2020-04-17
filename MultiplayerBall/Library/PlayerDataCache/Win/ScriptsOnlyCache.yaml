@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - Countdown
     - CreateOrJoinCanvas
     - CreateRoomMenu
     - CurrentRoomCanvas
@@ -158,6 +159,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 11962}
     - Class: 114
       Script: {instanceID: 12042}
+    - Class: 114
+      Script: {instanceID: 48554}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1201,12 +1204,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: UnityStandardAssets.Utility
     className: ActivateTrigger
-  - hash:
-      serializedVersion: 2
-      Hash: 8b363645bc9ea14cf2ab4da2eccbe98f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: StopCamera
   - hash:
       serializedVersion: 2
       Hash: 5b4ca4ccdfdf608d0898d60c5340e51e
@@ -2437,6 +2434,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: UnityStandardAssets.Utility
     className: AutoMobileShaderSwitch
+  - hash:
+      serializedVersion: 2
+      Hash: 44e142d5379a980c8593922333b90119
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Countdown
   platform: 5
   scenePathNames:
   - Assets/Scenes/NameScene.unity
