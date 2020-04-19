@@ -4,20 +4,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Countdown : MonoBehaviour
+public class Timer : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject _invisibleWalls;
-    [SerializeField]
-    private int _countDownTime;
     [SerializeField]
     private int _currentTime;
     [SerializeField]
     private float _timer;
     [SerializeField]
     private Text _text;
-    [SerializeField]
-    private GameObject _canvasManager;
 
     // Start is called before the first frame update
     void Start()
@@ -33,16 +27,14 @@ public class Countdown : MonoBehaviour
     void Update()
     {
         CountSeconds();
-        if (_currentTime > 0) ChangeTime();
-        else if (_currentTime > -1) _text.text = "START";
-        else StartGame();
+        ChangeTime();
     }
 
 
     private void CountSeconds()
     {
         _timer += Time.deltaTime;
-        _currentTime = _countDownTime - Convert.ToInt32(_timer % 60);
+        _currentTime = Convert.ToInt32(_timer % 60) + 60 * Mathf.FloorToInt(_timer / 60);
     }
 
     private void ChangeTime()
@@ -53,18 +45,15 @@ public class Countdown : MonoBehaviour
         }
     }
 
-    private void StartGame()
-    {
-        _invisibleWalls.SetActive(false);
-        _canvasManager.GetComponent<GameCanvasManager>().StartCounter();
-
-    }
-
     private void FirstInitialize()
     {
-        _countDownTime = 5;
         _currentTime = 0;
         _timer = 0;
         _text.text = "";
+    }
+
+    public int GetTime()
+    {
+        return _currentTime;
     }
 }

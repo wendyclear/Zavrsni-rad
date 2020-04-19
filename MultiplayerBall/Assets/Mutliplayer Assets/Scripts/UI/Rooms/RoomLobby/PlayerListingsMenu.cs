@@ -114,21 +114,13 @@ public class PlayerListingsMenu : MonoBehaviourPunCallbacks
     {
         if (PhotonNetwork.IsMasterClient)
         {
-            for (int i = 0; i < _listings.Count; i++)
-            {
-                if (_listings[i].Player != PhotonNetwork.LocalPlayer)
-                {
-                    if (!_listings[i].Ready) ; //check if everyone is ready
-                       // return;
-                }
-            }
             PhotonNetwork.CurrentRoom.IsOpen = false;
             PhotonNetwork.CurrentRoom.IsVisible = false;
             PhotonNetwork.LoadLevel(2); // ROOM INDEX!!!!
         }
     }
 
-    public void OnClick_ReadyUp()
+   /* public void OnClick_ReadyUp()
     {
         if (!PhotonNetwork.IsMasterClient)
         {
@@ -145,5 +137,5 @@ public class PlayerListingsMenu : MonoBehaviourPunCallbacks
         {
             _listings[index].Ready = ready;
         }
-    }
+    }*/
 }

@@ -26,13 +26,13 @@ namespace UnityStandardAssets.Vehicles.Ball
 
         }
 
-        private void OnCollisionEnter(Collision collision)
+        private void OnTriggerEnter(Collider other)
         {
-            if (collision.gameObject.tag == "instadeath")
+            if (other.gameObject.tag == "instadeath")
             {
                 if (base.photonView.IsMine)
                 {
-                    GameObject.Find("Canvases").GetComponent<GameCanvasManager>().GameOver();
+                    GameObject.Find("CanvasManager").GetComponent<GameCanvasManager>().GameOver();
                 }
             }
         }
