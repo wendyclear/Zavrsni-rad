@@ -49,7 +49,7 @@ namespace UnityStandardAssets.Vehicles.Ball
         private void Update()
         {
             // Get the axis and jump input.
-            if (base.photonView.IsMine)
+            if (base.photonView.IsMine && !ball._playerFinished)
             {
                 float h = CrossPlatformInputManager.GetAxis("Horizontal");
                 float v = CrossPlatformInputManager.GetAxis("Vertical");

@@ -13,6 +13,7 @@ namespace UnityStandardAssets.Vehicles.Ball
         [SerializeField] private float _x;
         [SerializeField] private float _y;
         [SerializeField] private float _z;
+        [SerializeField] public bool _playerFinished;
 
         private const float k_GroundRayLength = 1f; // The length of the ray to check if the ball is grounded.
         private Rigidbody m_Rigidbody;
@@ -21,6 +22,7 @@ namespace UnityStandardAssets.Vehicles.Ball
         private void Start()
         {
             m_Rigidbody = GetComponent<Rigidbody>();
+            _playerFinished = false;
             // Set the maximum angular velocity.
             GetComponent<Rigidbody>().maxAngularVelocity = m_MaxAngularVelocity;
 
@@ -32,7 +34,19 @@ namespace UnityStandardAssets.Vehicles.Ball
             {
                 if (base.photonView.IsMine)
                 {
-                    GameObject.Find("CanvasManager").GetComponent<GameCanvasManager>().GameOver();
+                    if (GameObject.Find("GameFinishedCanvas") == null)
+                    {
+                        GameObject.Find("CanvasManager").GetComponent<GameCanvasManager>().GameOver();
+                    }
+                }
+            }
+            else if (other.gameObject.tag == "finish")
+            {
+                if (base.photonView.IsMine)
+                {
+                    int place = GameObject.Find("FinishCounter").GetComponent<FinishCounter>().Finish();
+                    GameObject.Find("CanvasManager").GetComponent<GameCanvasManager>().GameFinished(place) ;
+                    _playerFinished = true;
                 }
             }
         }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - enemy
   - instadeath
+  - finish
   layers:
   - Default
   - TransparentFX

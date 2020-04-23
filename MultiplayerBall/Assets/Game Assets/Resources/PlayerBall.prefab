@@ -172,6 +172,7 @@ MonoBehaviour:
   _x: 0
   _y: 0
   _z: 0
+  _playerFinished: 0
 --- !u!54 &7507772908913994384
 Rigidbody:
   m_ObjectHideFlags: 0

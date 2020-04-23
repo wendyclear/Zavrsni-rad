@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Photon.Pun;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,6 +33,7 @@ public class Countdown : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         CountSeconds();
         if (_currentTime > 0) ChangeTime();
         else if (_currentTime > -1) _text.text = "START";
