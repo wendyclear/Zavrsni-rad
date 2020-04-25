@@ -332,7 +332,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12092}
     - Class: 114
-      Script: {instanceID: 21024}
+      Script: {instanceID: 22630}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -473,7 +473,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12092}
     - Class: 114
-      Script: {instanceID: 21024}
+      Script: {instanceID: 22630}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -545,7 +545,7 @@ ScriptsOnlyBuild:
     className: SmoothSyncMovement
   - hash:
       serializedVersion: 2
-      Hash: 5235c21f5a8309c0efe1c14c02879a57
+      Hash: d06def7b7fd96353eaae69e2285c149a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Countdown
@@ -2468,4 +2468,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/NameScene.unity
   - Assets/Scenes/Lobby.unity
   - Assets/Scenes/Game.unity
-  playerPath: C:/Users/sara/Desktop/Zavrsni-rad/MultiplayerBall/Builds/Latest build/MultiplayerBall.exe
+  playerPath: C:/Users/sara/Desktop/Zavrsni-rad-build/Latest build/MultiplayerBall.exe

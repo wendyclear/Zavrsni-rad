@@ -9,6 +9,7 @@ public class CreateRoomMenu : MonoBehaviourPunCallbacks
 {
     [SerializeField]
     private Text _roomName; // PAZITI DA NIKAD NIJE EMPTY
+    //ExitGames.Client.Photon.Hashtable CustomeValue;
 
     private RoomsCanvases _roomCanvases;
     public void FirstInitialize(RoomsCanvases canvases)
@@ -38,6 +39,14 @@ public class CreateRoomMenu : MonoBehaviourPunCallbacks
     public override void OnCreatedRoom()
     {
         Debug.Log("Created room successfully");
+        //aaaaaaaaaaaaaaa
+       /* if (PhotonNetwork.LocalPlayer.IsMasterClient)
+        {
+            CustomeValue = new ExitGames.Client.Photon.Hashtable();
+            CustomeValue.Add("StartTime", PhotonNetwork.Time);
+            PhotonNetwork.CurrentRoom.SetCustomProperties(CustomeValue);
+        }
+        //aaaaaaaaaaaaaaaa*/
         _roomCanvases.CurrentRoomCanvas.Show();
     }
 

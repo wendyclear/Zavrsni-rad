@@ -5,56 +5,70 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Countdown : MonoBehaviour
+public class Countdown : MonoBehaviourPun
 {
-    [SerializeField]
-    private GameObject _invisibleWalls;
-    [SerializeField]
-    private int _countDownTime;
-    [SerializeField]
-    private int _currentTime;
-    [SerializeField]
-    private float _timer;
     [SerializeField]
     private Text _text;
     [SerializeField]
+    private GameObject _invisibleWalls;
+    [SerializeField]
     private GameObject _canvasManager;
+    [SerializeField]
+    private bool _start = false;
+    [SerializeField]
+    private double timerIncrementValue;
+    [SerializeField]
+    private double startTime;
+    [SerializeField] 
+    private double timer = 6;
+    [SerializeField]
+    private int _countDownTime;
+    ExitGames.Client.Photon.Hashtable CustomeValue;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        FirstInitialize();
-    }
     private void Awake()
     {
-        FirstInitialize();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-        CountSeconds();
-        if (_currentTime > 0) ChangeTime();
-        else if (_currentTime > -1) _text.text = "START";
-        else StartGame();
-    }
-
-
-    private void CountSeconds()
-    {
-        _timer += Time.deltaTime;
-        _currentTime = _countDownTime - Convert.ToInt32(_timer % 60);
-    }
-
-    private void ChangeTime()
-    {
-        if (_text.text != _currentTime.ToString())
+        if (PhotonNetwork.LocalPlayer.IsMasterClient)
         {
-            _text.text = _currentTime.ToString();
+             CustomeValue = new ExitGames.Client.Photon.Hashtable();
+             startTime = PhotonNetwork.Time;
+             CustomeValue.Add("StartTime", startTime);
+             PhotonNetwork.CurrentRoom.SetCustomProperties(CustomeValue);
+            _text.text = "";
         }
     }
+    void Start()
+    {
+            startTime = double.Parse(PhotonNetwork.CurrentRoom.CustomProperties["StartTime"].ToString());
+            _text.text = "";
+    }
 
+    void Update()
+    {
+        if (startTime == 0)
+        {
+            startTime = double.Parse(PhotonNetwork.CurrentRoom.CustomProperties["StartTime"].ToString());
+
+        }
+        timerIncrementValue = timer - (int)(PhotonNetwork.Time - startTime);
+
+        if (timerIncrementValue >= 1)
+        {
+            ChangeTime();
+        }
+        else
+        {
+            if (timerIncrementValue == 0)
+            {
+                _text.text = "START";
+            }
+            else
+            {
+                StartGame();
+            }
+        }
+
+
+    }
     private void StartGame()
     {
         _invisibleWalls.SetActive(false);
@@ -62,11 +76,11 @@ public class Countdown : MonoBehaviour
 
     }
 
-    private void FirstInitialize()
+    private void ChangeTime()
     {
-        _countDownTime = 5;
-        _currentTime = 0;
-        _timer = 0;
-        _text.text = "";
+        if (_text.text != timerIncrementValue.ToString())
+        {
+            _text.text = timerIncrementValue.ToString();
+        }
     }
 }

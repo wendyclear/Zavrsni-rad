@@ -1,9 +1,10 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameCanvasManager : MonoBehaviour
+public class GameCanvasManager : MonoBehaviourPun
 {
     [SerializeField]
     private GameObject _gameOverCanvas; 
