@@ -33,7 +33,7 @@ public class EnemySpawner : MonoBehaviour
 	void Start()
 	{   // definicija vremena za instanciranje sljedećeg objekta (u koliko vremena se svi instanciraju)
 		secondsBetweenSpawning = timeToPoplulateLevel / numberOfEnemies;
-		nextSpawnTime = Time.time + secondsBetweenSpawning;
+		nextSpawnTime = (float)PhotonNetwork.Time + secondsBetweenSpawning;
 	}
 
 	// Ova funkcija se poziva jednom po okviru
@@ -43,7 +43,7 @@ public class EnemySpawner : MonoBehaviour
 		if (numberOfEnemies > 0)
 		{
 			// je li vrijeme za generiranje novog neprijatelja
-			if (Time.time >= nextSpawnTime)
+			if (PhotonNetwork.Time >= nextSpawnTime)
 			{
 				// Spawn the game object through function below
 				MakeThingToSpawn();
@@ -51,7 +51,7 @@ public class EnemySpawner : MonoBehaviour
 				numberOfEnemies = numberOfEnemies - 1;
 
 				// definicija sljedećeg termina generiranja objekta
-				nextSpawnTime = Time.time + secondsBetweenSpawning;
+				nextSpawnTime = (float)PhotonNetwork.Time + secondsBetweenSpawning;
 			}
 		}
 	}

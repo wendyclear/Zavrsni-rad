@@ -38,20 +38,10 @@ public class CreateRoomMenu : MonoBehaviourPunCallbacks
 
     public override void OnCreatedRoom()
     {
-        Debug.Log("Created room successfully");
-        //aaaaaaaaaaaaaaa
-       /* if (PhotonNetwork.LocalPlayer.IsMasterClient)
-        {
-            CustomeValue = new ExitGames.Client.Photon.Hashtable();
-            CustomeValue.Add("StartTime", PhotonNetwork.Time);
-            PhotonNetwork.CurrentRoom.SetCustomProperties(CustomeValue);
-        }
-        //aaaaaaaaaaaaaaaa*/
         _roomCanvases.CurrentRoomCanvas.Show();
     }
 
     public override void OnCreateRoomFailed(short returnCode, string message)
     {
-        Debug.Log("Room creation failed: " + message);
     }
 }

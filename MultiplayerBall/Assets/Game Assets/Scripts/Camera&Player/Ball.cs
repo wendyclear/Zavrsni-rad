@@ -49,6 +49,11 @@ namespace UnityStandardAssets.Vehicles.Ball
                     _playerFinished = true;
                 }
             }
+
+            else if (other.gameObject.tag == "buff")
+            {
+                Destroy(other.gameObject);
+            }
         }
 
         public void Move(Vector3 moveDirection, bool jump)

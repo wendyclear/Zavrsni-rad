@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Photon.Pun;
 
 public class TimedStateTransition : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class TimedStateTransition : MonoBehaviour
 	void Start()
 	{
 		// set the targetTime to be the current time + nextState seconds
-		targetTime = Time.time + nextState;
+		targetTime = (float)PhotonNetwork.Time + nextState;
 		this.GetComponent<Animator>().SetBool("NotExist", false);
 		this.GetComponent<Animator>().SetBool("Exist", true);
 	}
@@ -28,7 +29,7 @@ public class TimedStateTransition : MonoBehaviour
 				this.GetComponent<Animator>().SetBool("NotExist", true);
 				this.GetComponent<Animator>().SetBool("Exist", false);
 				// setting target time for the next round
-				targetTime = Time.time + nextState + 1;
+				targetTime = (float)PhotonNetwork.Time + nextState + 1;
 
 				// trigger the Animator to make tranition from not existing to existing (nepostojanje to pocetak=
 			}
@@ -37,7 +38,7 @@ public class TimedStateTransition : MonoBehaviour
 				this.GetComponent<Animator>().SetBool("Exist", true);
 				this.GetComponent<Animator>().SetBool("NotExist", false);
 				// setting target time for the next round
-				targetTime = Time.time + nextState + 1;
+				targetTime = (float)PhotonNetwork.Time + nextState + 1;
 
 			}
 
