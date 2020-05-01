@@ -53,6 +53,10 @@ namespace UnityStandardAssets.Vehicles.Ball
             else if (other.gameObject.tag == "buff")
             {
                 Destroy(other.gameObject);
+                if (base.photonView.IsMine)
+                {
+                    GameObject.Find("CanvasManager").GetComponent<GameCanvasManager>().GetBuff();
+                }
             }
         }
 

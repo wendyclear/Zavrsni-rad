@@ -39,4 +39,9 @@ public class GameCanvasManager : MonoBehaviourPun
         _countdownCanvas.SetActive(false);
         _timerCanvas.SetActive(true);
     }
+
+    public void GetBuff()
+    {
+        _timerCanvas.GetComponent<Timer>().GetBuff();
+    }
 }
