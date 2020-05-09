@@ -16,7 +16,6 @@ public class GameCanvasManager : MonoBehaviourPun
     private GameObject _countdownCanvas;
     [SerializeField]
     private GameObject _timerCanvas;
-    // Start is called before the first frame update
 
     public void GameOver()
     {
