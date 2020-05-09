@@ -12,7 +12,6 @@ public class RoomListingsMenu : MonoBehaviourPunCallbacks
     private RoomListing _roomListing;
 
     private List<RoomListing> _listings = new List<RoomListing>();
-   // private List<string> _roomNames = new List<string>();
 
     private RoomsCanvases _roomsCanvases;
 
@@ -30,13 +29,11 @@ public class RoomListingsMenu : MonoBehaviourPunCallbacks
     }
     public override void OnRoomListUpdate(List<RoomInfo> roomList)
     {
-        // bool exists = false;
         foreach (RoomInfo info in roomList)
         {
             //Removed from rooms list.
             if (info.RemovedFromList)
             {
-                //Debug.Log("Brišem sobu " + info.Name);
                 int index = _listings.FindIndex(x => x.RoomInfo.Name == info.Name);
                 if (index != -1)
                 {
@@ -55,13 +52,8 @@ public class RoomListingsMenu : MonoBehaviourPunCallbacks
                     {
                         listing.SetRoomInfo(info);
                         _listings.Add(listing);
-                        // _roomNames.Add(info.Name);
                     }
                 }
-                else
-                {
-                    //modify listing here
-                } 
             }
         }
     }

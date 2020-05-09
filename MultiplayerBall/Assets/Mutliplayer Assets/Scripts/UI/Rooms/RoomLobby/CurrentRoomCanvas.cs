@@ -5,18 +5,17 @@ using UnityEngine;
 public class CurrentRoomCanvas : MonoBehaviour
 {
     [SerializeField]
-    private PlayerListingsMenu _playerListingsMenu;
+    private RoomMenu _roomMenu;
 
     [SerializeField]
     private LeaveRoomMenu _leaveRoomMenu;
-
     private RoomsCanvases _roomCanvases;
-    public LeaveRoomMenu LeaveRoomMenu { get { return LeaveRoomMenu;}}
+   public LeaveRoomMenu LeaveRoomMenu { get { return LeaveRoomMenu;}}
 
     public void FirstInitialize(RoomsCanvases canvases)
     {
         _roomCanvases = canvases;
-        _playerListingsMenu.FirstInitialize(canvases);
+        _roomMenu.FirstInitialize(canvases);
         _leaveRoomMenu.FirstInitialize(canvases);
     }
 

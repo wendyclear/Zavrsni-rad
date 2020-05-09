@@ -6,7 +6,7 @@ using Photon.Realtime;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class PlayerListingsMenu : MonoBehaviourPunCallbacks
+public class RoomMenu : MonoBehaviourPunCallbacks
 {
     [SerializeField]
     private Text _playersCountText;
@@ -35,7 +35,7 @@ public class PlayerListingsMenu : MonoBehaviourPunCallbacks
 
     }
 
-    public void ClickButton_ChangeScene() //startgame
+    public void ClickButton_StartGame() //startgame
     {
         if (PhotonNetwork.IsMasterClient)
         {
