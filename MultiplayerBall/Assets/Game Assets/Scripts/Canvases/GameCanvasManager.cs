@@ -25,12 +25,11 @@ public class GameCanvasManager : MonoBehaviourPun
         _gameOverCanvas.GetComponent<Result>().SetResult(_timerCanvas.GetComponent<Timer>().GetTime());
         _gameOverCanvas.SetActive(true);
     }
-    public void GameFinished(int place)
+    public void GameFinished()
     {
         _timerCanvas.SetActive(false);
         _leaveCanvas.SetActive(false);
         _gameFinishedCanvas.GetComponent<Result>().SetResult(_timerCanvas.GetComponent<Timer>().GetTime());
-        _gameFinishedCanvas.GetComponent<Result>().SetPlace(place);
         _gameFinishedCanvas.SetActive(true);
     }
 

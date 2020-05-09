@@ -6,7 +6,6 @@ ScriptsOnlyBuild:
     - CreateRoomMenu
     - CurrentRoomCanvas
     - EnemySpawner
-    - FinishCounter
     - GameCanvasManager
     - GameSettings
     - InstantiateExample
@@ -65,6 +64,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.InputField
     - UnityEngine.UI.LayoutElement
     - UnityEngine.UI.Mask
+    - UnityEngine.UI.Outline
     - UnityEngine.UI.RawImage
     - UnityEngine.UI.ScrollRect
     - UnityEngine.UI.Scrollbar
@@ -120,8 +120,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 9774}
     - Class: 114
       Script: {instanceID: 9820}
-    - Class: 114
-      Script: {instanceID: 9856}
     - Class: 114
       Script: {instanceID: 9910}
     - Class: 114
@@ -469,6 +467,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11966}
     - Class: 114
+      Script: {instanceID: 11970}
+    - Class: 114
       Script: {instanceID: 12046}
     - Class: 114
       Script: {instanceID: 12084}
@@ -647,12 +647,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: UnityStandardAssets.Characters.FirstPerson
     className: FirstPersonController
-  - hash:
-      serializedVersion: 2
-      Hash: ac7675f39c55287277e54f6fef27d064
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: FinishCounter
   - hash:
       serializedVersion: 2
       Hash: 74c875e0f15c48e0a55f06093aa93e15
@@ -1855,7 +1849,7 @@ ScriptsOnlyBuild:
     className: BallUserControlPhoton
   - hash:
       serializedVersion: 2
-      Hash: 1836cfbe2e3b01776bcf3d92a4627d40
+      Hash: b29367065079701f535e49e0edf1041a
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Result

@@ -44,8 +44,7 @@ namespace UnityStandardAssets.Vehicles.Ball
             {
                 if (base.photonView.IsMine)
                 {
-                    int place = GameObject.Find("FinishCounter").GetComponent<FinishCounter>().Finish();
-                    GameObject.Find("CanvasManager").GetComponent<GameCanvasManager>().GameFinished(place) ;
+                    GameObject.Find("CanvasManager").GetComponent<GameCanvasManager>().GameFinished() ;
                     _playerFinished = true;
                 }
             }
