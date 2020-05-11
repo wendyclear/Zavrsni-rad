@@ -978,7 +978,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -719.2998, y: 259.1998}
+  m_AnchoredPosition: {x: -719.2998, y: 259.1992}
   m_SizeDelta: {x: 569.092, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &507154141
@@ -1082,7 +1082,7 @@ GameObject:
   - component: {fileID: 681753423}
   - component: {fileID: 681753422}
   m_Layer: 0
-  m_Name: TestConnect
+  m_Name: Connect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
