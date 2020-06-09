@@ -13,7 +13,6 @@ public class RoomMenu : MonoBehaviourPunCallbacks
 
     private RoomsCanvases _roomsCanvases;
 
-
     public void Update()
     {
         _playersCountText.text = "Players in room : " + PhotonNetwork.CurrentRoom.PlayerCount;
@@ -34,7 +33,6 @@ public class RoomMenu : MonoBehaviourPunCallbacks
         _roomsCanvases.CurrentRoomCanvas.Hide();
 
     }
-
     public void ClickButton_StartGame() //startgame
     {
         if (PhotonNetwork.IsMasterClient)

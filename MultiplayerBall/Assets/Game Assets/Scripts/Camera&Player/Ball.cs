@@ -1,10 +1,11 @@
-﻿using Photon.Pun;
+﻿using ExitGames.Client.Photon;
+using Photon.Pun;
+using Photon.Realtime;
 using System;
 using UnityEngine;
 namespace UnityStandardAssets.Vehicles.Ball
 {
     public class Ball : MonoBehaviourPun
-   // public class Ball : MonoBehaviour
     {
         [SerializeField] private float m_MovePower = 5; // The force added to the ball to move it.
         [SerializeField] private bool m_UseTorque = true; // Whether or not to use torque to move the ball.
@@ -15,17 +16,44 @@ namespace UnityStandardAssets.Vehicles.Ball
         [SerializeField] private float _z;
         [SerializeField] public bool _playerFinished;
 
+
+        private const byte ColorChange = 0;
         private const float k_GroundRayLength = 1f; // The length of the ray to check if the ball is grounded.
         private Rigidbody m_Rigidbody;
 
+        private void OnEnable()
+        {
+            PhotonNetwork.NetworkingClient.EventReceived += NetworkingClient_EventReceived;
+        } 
 
         private void Start()
         {
             m_Rigidbody = GetComponent<Rigidbody>();
             _playerFinished = false;
-            // Set the maximum angular velocity.
             GetComponent<Rigidbody>().maxAngularVelocity = m_MaxAngularVelocity;
 
+        }
+
+        private void Update()
+        {
+            if (base.photonView.IsMine && Input.GetKeyDown(KeyCode.C)) ChangeColor();
+        }
+
+        private void ChangeColor()
+        {
+            GameObject.Find("Floor").GetComponent<MeshRenderer>().material.color = new Color(UnityEngine.Random.value, UnityEngine.Random.value, UnityEngine.Random.value);
+            object[] data = new object[] { GameObject.Find("Floor").GetComponent<MeshRenderer>().material.color.r, GameObject.Find("Floor").GetComponent<MeshRenderer>().material.color.b, GameObject.Find("Floor").GetComponent<MeshRenderer>().material.color.g};
+            PhotonNetwork.RaiseEvent(ColorChange, data, RaiseEventOptions.Default, SendOptions.SendUnreliable);
+        }
+
+        private void NetworkingClient_EventReceived(EventData obj)
+        {
+            if (obj.Code == ColorChange)
+            {
+               object[] datas = (object[])obj.CustomData;
+               Color c = new Color((float)datas[0], (float)datas[1], (float)datas[2]);
+               GameObject.Find("Floor").GetComponent<MeshRenderer>().material.color = c;
+            }
         }
 
         private void OnTriggerEnter(Collider other)
@@ -57,6 +85,11 @@ namespace UnityStandardAssets.Vehicles.Ball
                     GameObject.Find("CanvasManager").GetComponent<GameCanvasManager>().GetBuff();
                 }
             }
+
+            else if (other.gameObject.tag == "Player" )
+            {
+                other.GetComponent<PhotonView>().RPC("Collide", RpcTarget.);
+            }
         }
 
         public void Move(Vector3 moveDirection, bool jump)
@@ -79,6 +112,12 @@ namespace UnityStandardAssets.Vehicles.Ball
                 // ... add force in upwards.
                 m_Rigidbody.AddForce(Vector3.up * m_JumpPower, ForceMode.Impulse);
             }
+        }
+
+        [PunRPC]
+        public void Collide(PhotonMessageInfo pmi)
+        {
+            GetComponent<MeshRenderer>().material.color = new Color(UnityEngine.Random.value, UnityEngine.Random.value, UnityEngine.Random.value);
         }
     }
 }

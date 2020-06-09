@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 7507772908913994384}
   - component: {fileID: 1416670981578091300}
   - component: {fileID: 1401444801471548491}
+  - component: {fileID: -2421014258674378477}
   m_Layer: 0
   m_Name: PlayerBall
   m_TagString: Player
@@ -224,3 +225,16 @@ MonoBehaviour:
   camForward: {x: 0, y: 0, z: 0}
   jump: 0
   _mainCamera: {fileID: 0}
+--- !u!135 &-2421014258674378477
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5474690644366066655}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
